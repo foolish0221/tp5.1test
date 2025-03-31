@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环标签</title>
+</head>
+<body>
+<!--$list是控制前端传递的数据集，$key是index索引，$obj是数据对象-->
+{foreach $list as $key=>$obj}
+    {$key}.{$obj.id}/{$obj.username}.{$obj.gender}.{$obj.email}<br>
+{/foreach}
+<hr>
+{volist name="list" id="obj"}
+    {$key}.{$obj.id}.{$obj.username}.{$obj.gender}.{$obj.email}<br>
+{/volist}
+<hr>
+{volist name="list" id="obj",mod='2'}
+    {eq name="mod" value="0"}
+        {$key}.{$obj.id}.{$obj.username}.{$obj.gender}.{$obj.email}<br>
+    {/eq}
+{/volist}
+
+</body>
+</html>
